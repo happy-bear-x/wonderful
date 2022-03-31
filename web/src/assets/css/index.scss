@@ -1,0 +1,42 @@
+@import './variables.scss';
+@import './mixin.scss';
+
+html,
+body .app {
+  color: #333333;
+  font-family: Arial, Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, sans-serif;
+  background-color: $background-color;
+}
+
+.app-container {
+  //padding-bottom: 50px;
+}
+
+.w {
+  width: 100%;
+}
+
+
+.f11em {
+  font-size: 1.1em;
+}
+
+.fb {
+  font-weight: bolder;
+}
+
+.c-white {
+  color: #fff
+}
+
+.title{
+  font-size: 1.5em;
+}
+
+.mt5{
+  margin-top: 5px;
+}
+
+.p5{
+  padding: 5px;
+}

@@ -1,0 +1,6 @@
+.article p{
+    text-indent: 2em;
+}
+.article p.noTab{
+    text-indent: unset;
+}
