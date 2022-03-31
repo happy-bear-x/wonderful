@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <van-cell placeholder="用户名/手机号"/>
-    <van-cell type="password" placeholder="密码"/>
+  <div class="p5">
+    <van-field placeholder="用户名/手机号" label="用户名" v-model="loginForm.username"/>
+    <van-field type="password" placeholder="密码" label="密码" v-model="loginForm.password"/>
+    <van-button type="info" block @click="login">登录</van-button>
   </div>
 
 </template>
@@ -9,7 +10,7 @@
 <script>
 // import Cookies from 'js-cookie'
 
-import {Toast} from "vant";
+import { Toast } from 'vant'
 
 export default {
   name: 'Login',

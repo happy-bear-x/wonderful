@@ -34,7 +34,7 @@
       close-on-popstate
       :style="{ height: '80%' }"
     >
-      <div>
+      <div v-if="token">
         <van-col :span="12" align="center">
           <van-button type="danger" block>
             <van-icon name="revoke"/>
@@ -48,15 +48,20 @@
           </van-button>
         </van-col>
         <van-field v-model="dairyTemp.title" placeholder="标题"/>
-        <textarea v-model="dairyTemp.content"></textarea>
+        <textarea class="w" style="height: 60vh" v-model="dairyTemp.content"></textarea>
       </div>
+      <login v-else/>
     </van-popup>
   </div>
 </template>
 
 <script>
+import { getToken } from '@/utils/auth'
+import Login from '@/views/home/login'
+
 export default {
   name: 'Diary',
+  components: { Login },
   data() {
     return {
       dairy: {
@@ -68,11 +73,11 @@ export default {
       showCalender: false,
       editShow: false,
       clickCount: 0,
-      dairyTemp: {}
+      dairyTemp: {},
+      token: getToken()
     }
   },
   created() {
-
   },
   methods: {
     showEdit() {

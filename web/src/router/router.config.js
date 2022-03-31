@@ -45,6 +45,11 @@ export const constantRouterMap = [
         path: '/diary/detail',
         component: () => import('@/views/home/diary/detail'),
         meta: { title: '详情', keepAlive: false }
+      },
+      {
+        path: '/login',
+        component: () => import('@/views/home/login'),
+        meta: { title: '登录', keepAlive: false, full: true }
       }]
   }
 ]

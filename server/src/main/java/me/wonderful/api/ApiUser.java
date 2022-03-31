@@ -3,6 +3,7 @@ package me.wonderful.api;
 import me.wonderful.common.AjaxResult;
 import me.wonderful.service.LoginService;
 import me.wonderful.vo.LoginBody;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/user")
 public class ApiUser {
 
+    @Autowired
     private LoginService loginService;
 
     /**

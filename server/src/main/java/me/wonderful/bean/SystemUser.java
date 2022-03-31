@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * @author xiongchaodu
  * @date 2022/03/31 16:22
@@ -11,7 +13,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-public class SystemUser extends BaseBean {
+public class SystemUser extends BaseBean implements Serializable {
 
     private String username;
     private String password;
