@@ -9,6 +9,8 @@
 <script>
 // import Cookies from 'js-cookie'
 
+import {Toast} from "vant";
+
 export default {
   name: 'Login',
   data() {
@@ -18,7 +20,6 @@ export default {
   },
   methods: {
     login() {
-      this.loading = true
       // if (this.loginForm.rememberMe) {
       //   Cookies.set('username', this.loginForm.username, { expires: 30 })
       //   Cookies.set('password', this.loginForm.password, { expires: 30 })
@@ -29,9 +30,9 @@ export default {
       //   // Cookies.remove('rememberMe')
       // }
       this.$store.dispatch('Login', this.loginForm).then(() => {
-        this.$router.push({ path: this.redirect || '/' }).catch(() => {})
+        // this.$router.push({ path: this.redirect || '/' }).catch(() => {})
+        Toast.success('登录成功')
       }).catch(() => {
-        this.loading = false
         /* if (this.captchaOnOff) {
           this.getCode()
         }*/

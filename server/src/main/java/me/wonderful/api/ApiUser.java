@@ -1,9 +1,9 @@
 package me.wonderful.api;
 
 import me.wonderful.common.AjaxResult;
-import me.wonderful.constants.Constants;
 import me.wonderful.service.LoginService;
 import me.wonderful.vo.LoginBody;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,11 +26,12 @@ public class ApiUser {
      */
     @PostMapping("/login")
     public AjaxResult login(@RequestBody LoginBody loginBody) {
-        AjaxResult ajax = AjaxResult.success();
         // 生成令牌
         String token = loginService.login(loginBody);
-        ajax.put(Constants.TOKEN, token);
-        return ajax;
+        if (StringUtils.hasText(token)) {
+            return AjaxResult.success(token);
+        }
+        return AjaxResult.error("用户名/手机号或密码错误");
     }
 
     /**
