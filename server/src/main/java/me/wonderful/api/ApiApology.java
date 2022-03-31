@@ -1,7 +1,7 @@
 package me.wonderful.api;
 
 import me.wonderful.bean.Iplogs;
-import me.wonderful.service.IIplogsService;
+import me.wonderful.service.IplogsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,16 +15,16 @@ import javax.servlet.http.HttpServletRequest;
  **/
 @RestController
 @RequestMapping("/apology")
-public class Apology {
+public class ApiApology {
     @Autowired
-    private IIplogsService iIplogsService;
+    private IplogsService iplogsService;
     @GetMapping
     public String apology(HttpServletRequest request) {
         String remoteAddr = request.getRemoteAddr();
         Iplogs iplogs = new Iplogs();
         iplogs.setIp(remoteAddr);
         iplogs.setMsg("test");
-        iIplogsService.save(iplogs);
+        iplogsService.save(iplogs);
         System.out.println(remoteAddr);
         return "apology";
     }

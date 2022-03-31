@@ -2,7 +2,7 @@ package me.wonderful.service.impl;
 
 import me.wonderful.bean.Iplogs;
 import me.wonderful.mapper.IplogsMapper;
-import me.wonderful.service.IIplogsService;
+import me.wonderful.service.IplogsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2022-03-24
  */
 @Service
-public class IplogsServiceImpl extends ServiceImpl<IplogsMapper, Iplogs> implements IIplogsService {
+public class IplogsServiceImpl extends ServiceImpl<IplogsMapper, Iplogs> implements IplogsService {
 
 }

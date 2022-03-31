@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author astupidcoder
  * @since 2022-03-24
  */
-public interface IIplogsService extends IService<Iplogs> {
+public interface IplogsService extends IService<Iplogs> {
 
 }

@@ -2,16 +2,22 @@ package me.wonderful.api;
 
 import me.wonderful.common.AjaxResult;
 import me.wonderful.constants.Constants;
+import me.wonderful.service.LoginService;
 import me.wonderful.vo.LoginBody;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Set;
-
+/**
+ * @author Administrator
+ */
 @RestController
-public class User {
+@RequestMapping("/api/user")
+public class ApiUser {
+
+    private LoginService loginService;
+
     /**
      * 登录方法
      *
@@ -19,12 +25,10 @@ public class User {
      * @return 结果
      */
     @PostMapping("/login")
-    public AjaxResult login(@RequestBody LoginBody loginBody)
-    {
+    public AjaxResult login(@RequestBody LoginBody loginBody) {
         AjaxResult ajax = AjaxResult.success();
         // 生成令牌
-        String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getCode(),
-                loginBody.getUuid());
+        String token = loginService.login(loginBody);
         ajax.put(Constants.TOKEN, token);
         return ajax;
     }
@@ -34,7 +38,7 @@ public class User {
      *
      * @return 用户信息
      */
-    @GetMapping("getInfo")
+    /*@GetMapping("getInfo")
     public AjaxResult getInfo()
     {
         SysUser user = SecurityUtils.getLoginUser().getUser();
@@ -47,6 +51,6 @@ public class User {
         ajax.put("roles", roles);
         ajax.put("permissions", permissions);
         return ajax;
-    }
+    }*/
 
 }
