@@ -1,8 +1,11 @@
 package me.wonderful.Interceptor;
 
+import com.alibaba.fastjson.JSON;
 import me.wonderful.bean.SystemUser;
+import me.wonderful.common.AjaxResult;
 import me.wonderful.component.RedisCache;
 import me.wonderful.constants.Constants;
+import me.wonderful.constants.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -20,6 +23,11 @@ import java.util.Objects;
 public class LoginInterceptor implements HandlerInterceptor {
     @Autowired
     private RedisCache redisCache;
+    /**
+     * 未登录
+     */
+    private final Object error = JSON.toJSON(AjaxResult.error(HttpStatus.UNAUTHORIZED, "未登录"));
+    
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -28,6 +36,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             SystemUser userInfo = redisCache.getCacheObject(token);
             return !Objects.isNull(userInfo);
         }
+        response.getWriter().print(error);
         return false;
     }
 }

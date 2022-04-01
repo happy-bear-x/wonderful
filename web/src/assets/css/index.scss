@@ -29,14 +29,34 @@ body .app {
   color: #fff
 }
 
-.title{
+.title {
   font-size: 1.5em;
 }
 
-.mt5{
+.mt5 {
   margin-top: 5px;
 }
 
-.p5{
+.pAbs {
+  position: absolute;
+}
+
+.p5 {
   padding: 5px;
+}
+
+//绝对定位居中
+.absCenter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// table cell居中
+.tbCenter {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }

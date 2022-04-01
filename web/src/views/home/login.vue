@@ -1,5 +1,5 @@
 <template>
-  <div class="p5">
+  <div class="absCenter p5">
     <van-field placeholder="用户名/手机号" label="用户名" v-model="loginForm.username"/>
     <van-field type="password" placeholder="密码" label="密码" v-model="loginForm.password"/>
     <van-button type="info" block @click="login">登录</van-button>
@@ -33,6 +33,7 @@ export default {
       this.$store.dispatch('Login', this.loginForm).then(() => {
         // this.$router.push({ path: this.redirect || '/' }).catch(() => {})
         Toast.success('登录成功')
+        this.$emit('success')
       }).catch(() => {
         /* if (this.captchaOnOff) {
           this.getCode()

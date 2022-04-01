@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Administrator
  */
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 public class ApiUser {
 
     @Autowired
