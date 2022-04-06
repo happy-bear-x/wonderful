@@ -31,15 +31,16 @@ export const constantRouterMap = [
         meta: { title: '玫瑰', keepAlive: false }
       },
       {
-        path: '/howLong',
         name: 'howLong',
+        path: '/howLong',
         component: () => import('@/views/home/howLongToKnow'),
         meta: { title: '相识时间', keepAlive: false, full: true }
       },
       {
+        name: 'diary',
         path: '/diary',
         component: () => import('@/views/home/diary/index'),
-        meta: { title: '佳时记录', keepAlive: false, full: true }
+        meta: { title: '朝夕与共', keepAlive: false, full: true }
       },
       {
         path: '/diary/detail',
@@ -47,9 +48,16 @@ export const constantRouterMap = [
         meta: { title: '详情', keepAlive: false }
       },
       {
+        name: 'login',
         path: '/login',
         component: () => import('@/views/home/login'),
         meta: { title: '登录', keepAlive: false, full: true }
+      },
+      {
+        name: 'msgBox',
+        path: '/msgBox',
+        component: () => import('@/views/home/msgBox'),
+        meta: { title: '登录', keepAlive: false }
       }]
   }
 ]
