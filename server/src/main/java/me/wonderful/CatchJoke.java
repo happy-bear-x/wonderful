@@ -13,8 +13,8 @@ public class CatchJoke {
     public static void main(String[] args) throws IOException, InterruptedException {
         List<Integer> goodJokeIdList = new ArrayList<>();
         String judgUrl = "https://xiaohua.zol.com.cn/index.php?c=Ajax_Xiaohua&a=XhVoteGoodBad&xhId=";
-        String contextUrl = "https://xiaohua.zol.com.cn/detail1/{}.html";
-        for (int i = 5000; i < 6000; i++) {
+        String contextUrl = "https://xiaohua.zol.com.cn/detail14/%d.html";
+        for (int i = 16000; i < 17000; i++) {
             try {
 
                 Document document = getDoc(judgUrl + i);
@@ -24,12 +24,12 @@ public class CatchJoke {
                     int fStart = text.indexOf("[\"");
                     int fEnd = text.indexOf("\",\"");
                     int sEnd = text.indexOf("\"]");
-                    Integer agree = Integer.valueOf(text.substring(fStart + 2, fEnd));
-                    Integer disagree = Integer.valueOf(text.substring(fEnd + 3, sEnd));
+                    double agree = Double.parseDouble(text.substring(fStart + 2, fEnd));
+                    double disagree = Double.parseDouble(text.substring(fEnd + 3, sEnd));
                     if (disagree == 0) {
                         disagree = 1;
                     }
-                    if (agree > 50 && agree / disagree > 2) {
+                    if (agree > 20 && agree / disagree > 2.5) {
                         goodJokeIdList.add(i);
                     }
                 }
@@ -45,7 +45,7 @@ public class CatchJoke {
                 String targetUrl = String.format(contextUrl, id);
                 Document document = getDoc(targetUrl);
                 for (Element element : document.select(".article-text")) {
-                    System.out.println(element.text());
+                    System.out.println(id + ">>" + element.text());
                     System.out.println();
                 }
                 Thread.sleep(500);

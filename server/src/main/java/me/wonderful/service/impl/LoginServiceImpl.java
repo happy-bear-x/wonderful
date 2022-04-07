@@ -1,6 +1,6 @@
 package me.wonderful.service.impl;
 
-import me.wonderful.bean.SystemUser;
+import me.wonderful.entity.SystemUser;
 import me.wonderful.component.RedisCache;
 import me.wonderful.mapper.SysUserMapper;
 import me.wonderful.service.LoginService;

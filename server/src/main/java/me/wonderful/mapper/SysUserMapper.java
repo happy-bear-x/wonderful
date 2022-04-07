@@ -1,7 +1,7 @@
 package me.wonderful.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import me.wonderful.bean.SystemUser;
+import me.wonderful.entity.SystemUser;
 import me.wonderful.vo.LoginBody;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

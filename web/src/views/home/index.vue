@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import {getHttpDom} from "@/utils/catch";
+
 export default {
   data() {
     return {
@@ -25,6 +27,7 @@ export default {
   computed: {},
 
   mounted() {
+    window.getHtml=getHttpDom
   },
 
   methods: {}

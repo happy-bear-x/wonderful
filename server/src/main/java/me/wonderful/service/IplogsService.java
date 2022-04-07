@@ -1,6 +1,6 @@
 package me.wonderful.service;
 
-import me.wonderful.bean.Iplogs;
+import me.wonderful.entity.Iplogs;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

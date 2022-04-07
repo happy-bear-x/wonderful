@@ -1,4 +1,4 @@
-package me.wonderful.bean;
+package me.wonderful.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-public class SystemUser extends BaseBean implements Serializable {
+public class SystemUser extends BaseEntity implements Serializable {
 
     private String username;
     private String password;

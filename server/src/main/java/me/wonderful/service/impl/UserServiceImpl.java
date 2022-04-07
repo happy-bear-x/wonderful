@@ -1,7 +1,7 @@
 package me.wonderful.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import me.wonderful.bean.SystemUser;
+import me.wonderful.entity.SystemUser;
 import me.wonderful.mapper.SysUserMapper;
 import org.springframework.stereotype.Service;
 

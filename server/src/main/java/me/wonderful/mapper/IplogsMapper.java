@@ -1,6 +1,6 @@
 package me.wonderful.mapper;
 
-import me.wonderful.bean.Iplogs;
+import me.wonderful.entity.Iplogs;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

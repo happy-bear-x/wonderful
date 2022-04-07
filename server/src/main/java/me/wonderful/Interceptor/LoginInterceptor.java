@@ -1,7 +1,7 @@
 package me.wonderful.Interceptor;
 
 import com.alibaba.fastjson.JSON;
-import me.wonderful.bean.SystemUser;
+import me.wonderful.entity.SystemUser;
 import me.wonderful.common.AjaxResult;
 import me.wonderful.component.RedisCache;
 import me.wonderful.constants.Constants;

@@ -1,6 +1,6 @@
 package me.wonderful.api;
 
-import me.wonderful.bean.Iplogs;
+import me.wonderful.entity.Iplogs;
 import me.wonderful.service.IplogsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

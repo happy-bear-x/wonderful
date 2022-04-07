@@ -1,7 +1,7 @@
 package me.wonderful.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import me.wonderful.bean.SystemUser;
+import me.wonderful.entity.SystemUser;
 
 /**
  * @author xiongchaodu

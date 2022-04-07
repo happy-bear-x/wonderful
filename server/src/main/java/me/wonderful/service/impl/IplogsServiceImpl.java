@@ -1,6 +1,6 @@
 package me.wonderful.service.impl;
 
-import me.wonderful.bean.Iplogs;
+import me.wonderful.entity.Iplogs;
 import me.wonderful.mapper.IplogsMapper;
 import me.wonderful.service.IplogsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
