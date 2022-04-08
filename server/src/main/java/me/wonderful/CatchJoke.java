@@ -13,8 +13,8 @@ public class CatchJoke {
     public static void main(String[] args) throws IOException, InterruptedException {
         List<Integer> goodJokeIdList = new ArrayList<>();
         String judgUrl = "https://xiaohua.zol.com.cn/index.php?c=Ajax_Xiaohua&a=XhVoteGoodBad&xhId=";
-        String contextUrl = "https://xiaohua.zol.com.cn/detail14/%d.html";
-        for (int i = 16000; i < 17000; i++) {
+        String contextUrl = "https://xiaohua.zol.com.cn/detail20/%d.html";
+        for (int i = 17000; i < 20000; i++) {
             try {
 
                 Document document = getDoc(judgUrl + i);

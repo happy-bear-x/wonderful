@@ -29,6 +29,11 @@ public class AjaxResult extends HashMap<String, Object> {
     public static final String DATA_TAG = "data";
 
     /**
+     * 其他数据
+     */
+    public static final String OTHER_TAG = "other";
+
+    /**
      * 初始化一个新创建的 AjaxResult 对象，使其表示一个空消息。
      */
     public AjaxResult() {
@@ -151,5 +156,9 @@ public class AjaxResult extends HashMap<String, Object> {
     public AjaxResult put(String key, Object value) {
         super.put(key, value);
         return this;
+    }
+
+    public AjaxResult setOther(Object other) {
+        return put(OTHER_TAG, other);
     }
 }

@@ -1,4 +1,4 @@
-package me.wonderful.Interceptor;
+package me.wonderful.spring;
 
 import com.alibaba.fastjson.JSON;
 import me.wonderful.entity.SystemUser;

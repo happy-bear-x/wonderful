@@ -1,7 +1,11 @@
-package me.wonderful.Interceptor;
+package me.wonderful.spring;
 
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -10,7 +14,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @date 2022/03/31 16:40
  **/
 
+@EnableTransactionManagement
 @Configuration
+@MapperScan("me.wonderful.mapper")
 public class Config implements WebMvcConfigurer {
     
     @Autowired
@@ -20,6 +26,14 @@ public class Config implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/user/login");
+                .excludePathPatterns("/user/login","/sentence/dis");
+    }
+
+    /**
+     * mybatis-plus 分页插件
+     */
+    @Bean
+    public PaginationInterceptor paginationInterceptor() {
+        return new PaginationInterceptor();
     }
 }

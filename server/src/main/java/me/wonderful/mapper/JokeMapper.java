@@ -1,7 +1,7 @@
 package me.wonderful.mapper;
 
-import me.wonderful.entity.Joke;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import me.wonderful.entity.Joke;
 
 /**
  * <p>
