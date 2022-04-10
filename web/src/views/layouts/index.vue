@@ -28,13 +28,6 @@ export default {
             name: 'Home'
           },
           icon: 'home-o'
-        },
-        {
-          title: '关于我',
-          to: {
-            name: 'About'
-          },
-          icon: 'user-o'
         }
       ]
     }

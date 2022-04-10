@@ -17,8 +17,29 @@ body .app {
 }
 
 
-.f11em {
-  font-size: 1.1em;
+// 字体相关
+.f05r {
+  font-size: 0.5rem;
+}
+
+.f06r {
+  font-size: 0.6rem;
+}
+
+.f07r {
+  font-size: 0.7rem;
+}
+
+.f08r {
+  font-size: 0.8rem;
+}
+
+.f09r {
+  font-size: 0.9rem;
+}
+
+.f10r {
+  font-size: 1rem;
 }
 
 .fb {
@@ -29,20 +50,18 @@ body .app {
   color: #fff
 }
 
-.title {
-  font-size: 1.5em;
+.c-red {
+  color: red;
 }
 
-.mt5 {
-  margin-top: 5px;
+.c-orange {
+  color: orange;
 }
+
+// 位置相关
 
 .pAbs {
   position: absolute;
-}
-
-.p5 {
-  padding: 5px;
 }
 
 //绝对定位居中
@@ -59,4 +78,33 @@ body .app {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+}
+
+.tc {
+  text-align: center;
+  justify-content: center;
+}
+
+.fl {
+  float: left;
+}
+
+.m02r {
+  margin: 0.2rem;
+}
+
+.mt02r {
+  margin-top: 0.2rem;
+}
+
+.ml02r {
+  margin-left: 0.2rem;
+}
+
+.m05r {
+  margin: 0.5rem;
+}
+
+.p5 {
+  padding: 5px;
 }

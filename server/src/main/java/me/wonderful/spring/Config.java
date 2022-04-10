@@ -18,15 +18,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @MapperScan("me.wonderful.mapper")
 public class Config implements WebMvcConfigurer {
-    
+
     @Autowired
     private LoginInterceptor loginInterceptor;
-    
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/user/login","/sentence/dis");
+                .excludePathPatterns("/user/login","/sentence/**");
     }
 
     /**

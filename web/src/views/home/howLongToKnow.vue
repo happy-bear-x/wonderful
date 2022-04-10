@@ -1,5 +1,5 @@
 <template>
-  <div class="w f11em fb c-white howLong">
+  <div class="w f05r fb c-white howLong">
     <div class="bg w"></div>
     <div class="title w">距离第一次相识</div>
     <div class="time w">{{ showDate }}</div>

@@ -1,8 +1,8 @@
 /*
    句子相关
  */
-import request from "@/utils/request";
+import request from '@/utils/request'
 
-function getDisSentence(){
-    return request('/sentence/dis')
+export function getDisSentence() {
+  return request('/sentence/dis')
 }

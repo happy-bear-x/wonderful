@@ -58,6 +58,18 @@ export const constantRouterMap = [
         path: '/msgBox',
         component: () => import('@/views/home/msgBox'),
         meta: { title: '登录', keepAlive: false }
+      },
+      {
+        name: 'unhappy',
+        path: '/unhappy',
+        component: () => import('@/views/home/sad'),
+        meta: { title: '登录', keepAlive: false }
+      },
+      {
+        name: 'happy',
+        path: '/sentence',
+        component: () => import('@/views/home/sad'),
+        meta: { title: '登录', keepAlive: false }
       }]
   }
 ]

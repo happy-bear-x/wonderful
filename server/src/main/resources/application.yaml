@@ -8,9 +8,9 @@ server:
       force: true
 spring:
   datasource:
-    url: jdbc:mysql://loaclhost:3306/wonderful?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: root
-    password: root
+    url: jdbc:mysql://124.222.191.120:20542/wonderful?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: wonderful
+    password: jia1998.
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis-plus:
   configuration:

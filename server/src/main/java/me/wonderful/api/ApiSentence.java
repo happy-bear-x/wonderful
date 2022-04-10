@@ -3,8 +3,11 @@ package me.wonderful.api;
 import lombok.extern.slf4j.Slf4j;
 import me.wonderful.common.AjaxResult;
 import me.wonderful.common.Utils;
+import me.wonderful.service.SentenceService;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,28 +24,33 @@ import java.io.IOException;
 @RestController
 public class ApiSentence {
 
+    @Autowired
+    private SentenceService sentenceService;
+
     /**
      * 心灵毒鸡汤
      */
     @GetMapping("/dis")
     public AjaxResult disHope() {
         String disHopeUrl = "https://www.nihaowua.com/home.html";
-        try {
-            Document document = Utils.getHttpDocument(disHopeUrl);
-            Element section = document.selectFirst("section");
+        return sentenceService.getNiHaoWu(disHopeUrl);
+    }
 
-            Element bgTag = document.selectFirst("p a.reload:last-of-type");
-            String url = bgTag.attr("href");
-            return AjaxResult.success(section.text()).setOther(url);
-        } catch (IOException e) {
-            log.error(e.getMessage(), e);
-            return AjaxResult.error();
+    @GetMapping("/flatterer")
+    public AjaxResult flatterer() {
+        String disHopeUrl = "https://www.nihaowua.com/dog.html";
+        String text = null;
+        while (!StringUtils.hasText(text) || text.contains("爸爸")) {
+            AjaxResult haoWu = sentenceService.getNiHaoWu(disHopeUrl);
+            text = (String) haoWu.get(AjaxResult.MSG_TAG);
         }
+        return AjaxResult.success(text);
+
     }
 
     @PostMapping()
     public AjaxResult save() {
-        String disHopeUrl = "https://www.nihaowua.com/home.html";
+        String disHopeUrl = "https://www.nihaowua.com/dog.html";
         try {
             Document document = Utils.getHttpDocument(disHopeUrl);
         } catch (IOException e) {
