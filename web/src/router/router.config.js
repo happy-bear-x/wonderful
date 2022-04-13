@@ -60,16 +60,22 @@ export const constantRouterMap = [
         meta: { title: '登录', keepAlive: false }
       },
       {
-        name: 'unhappy',
-        path: '/unhappy',
+        name: 'sad',
+        path: '/sad',
         component: () => import('@/views/home/sad'),
-        meta: { title: '登录', keepAlive: false }
+        meta: { title: '小小伤害', keepAlive: false }
       },
       {
         name: 'happy',
         path: '/sentence',
         component: () => import('@/views/home/sad'),
-        meta: { title: '登录', keepAlive: false }
+        meta: { title: '每日一笑', keepAlive: false }
+      },
+      {
+        name: 'story',
+        path: '/story',
+        component: () => import('@/views/home/story'),
+        meta: { title: '小小故事', keepAlive: false }
       }]
   }
 ]

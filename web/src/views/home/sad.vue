@@ -2,19 +2,19 @@
   <div class="p5">
     <div class="fb f06r tc">心灵毒鸡汤</div>
     <span class="f07r c-orange">{{sentence.sentence}}</span>
-    <van-image :src="sentence.url">
+    <van-image :src="sentence.url" class="mt02r">
       <template v-slot:loading>
         <van-image :src="require('@/assets/img/loading1.gif')"></van-image>
       </template>
     </van-image>
     <div class="mt02r" v-show="showBtn">
-      <van-col :span="12">
+      <van-col :span="10" offset="1">
         <van-button type="primary" block @click="getDisSentence">
           <van-icon name="replay"/>
           再来一碗
         </van-button>
       </van-col>
-      <van-col :span="12">
+      <van-col :span="10" :offset="2">
         <van-button type="info" block @click="getImg">
           <van-icon name="down"/>
           获取图片

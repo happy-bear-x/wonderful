@@ -21,7 +21,8 @@ export default {
         { name: '相逢之时', icon: require('@/assets/icon/keyRecordDay.svg'), to: { name: 'howLong' }},
         { name: '小小伤害', icon: require('@/assets/icon/emo-sad.svg'), to: { name: 'sad' }},
         { name: '每日一笑', icon: require('@/assets/icon/emo-happy.svg'), to: { name: 'happy' }},
-        { name: '舔狗日记', icon: require('@/assets/icon/emo-g-smile.svg'), to: { name: 'happy' }}
+        { name: '舔狗日记', icon: require('@/assets/img/tiangou.png'), to: { name: 'happy' }},
+        { name: '小小故事', icon: require('@/assets/icon/story.svg'), to: { name: 'story' }}
       ]
     }
   },
